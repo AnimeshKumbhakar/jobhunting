@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap");
+:root {
+  --Poppins: "Poppins", sans-serif;
+  --Inter: "Inter", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--Poppins);
+}
+//for using the font called inter
+.inter-font {
+  font-family: var(--Inter);
+}
+
+

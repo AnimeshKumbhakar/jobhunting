@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | Candidate Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/styles/style.css" />
+
+  </head>
+  <body>
+    <!-- Navbar Section  -->
+    <div class="w-full h-auto">
+      <div class="container mx-auto px-4 py-4">
+        <div class="flex items-center justify-between">
+          <div class="Logo__container">
+            <a
+              href="/register/index.html"
+              class="font-semibold inter-font text-2xl"
+              >Company Logo</a
+            >
+          </div>
+          <!-- drop-down-container start  -->
+          <div class="relative inline-block text-left">
+            <div>
+              <button
+                type="button"
+                class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                id="menu-button"
+                aria-expanded="true"
+                aria-haspopup="true"
+              >
+                For Clients
+                <svg
+                  class="-mr-1 h-5 w-5 text-gray-400"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <div
+              class="drop-down-items absolute hidden right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+              role="menu"
+              aria-orientation="vertical"
+              aria-labelledby="menu-button"
+              tabindex="-1"
+            >
+              <div class="py-1" role="none">
+                <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                <a
+                  href="/login/index.html"
+                  class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-300"
+                  role="menuitem"
+                  tabindex="-1"
+                  id="menu-item-0"
+                  >For Clients</a
+                >
+                <a
+                  href="/login-organization/index.html"
+                  class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-300"
+                  role="menuitem"
+                  tabindex="-1"
+                  id="menu-item-0"
+                  >For Organizations</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- drop-down-container end -->
+        </div>
+      </div>
+    </div>
+    <!-- Navbar Section Ends  -->
+
+    <!-- View For Student Login Only  -->
+    <div class="w-full h-auto my-16">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between gap-12">
+          <div class="left__container w-1/2">
+            <!-- demo container for login page  -->
+            <div
+              class="w-full h-96 rounded-md bg-zinc-800 flex items-center justify-center text-white font-inter text-xl"
+            >
+              Demo Content
+            </div>
+            <!-- demo container for login page end  -->
+          </div>
+          <div class="right__container w-1/2">
+            <div class="w-full bg-gray-200 h-96 shadow-xl rounded-md py-5 px-6">
+              <h1 class="inter-font font-semibold text-2xl">Login</h1>
+              <!-- main container  -->
+              <div class="main__login__container mt-10">
+                <div class="input__box">
+                  <span
+                    class="block mb-1 inter-font capitalize text-sm font-semibold"
+                    >Email ID/Username</span
+                  >
+                  <input
+                    class="block w-full py-2.5 px-4 text-sm border-2 border-blue-300 focus:border-blue-400 rounded-md outline-none"
+                    type="email"
+                    placeholder="Enter Email ID/Username"
+                  />
+                </div>
+                <div class="input__box mt-6 relative">
+                  <span
+                    class="block mb-1 inter-font capitalize text-sm font-semibold"
+                    >Password</span
+                  >
+                  <input
+                    id="password"
+                    class="block w-full py-2.5 px-4 text-sm border-2 border-blue-300 focus:border-blue-400 rounded-md outline-none"
+                    type="password"
+                    placeholder="Enter Password"
+                  />
+                  <!-- show/hide button  -->
+                  <button
+                    id="show-hide"
+                    type="button"
+                    class="absolute right-0 uppercase text-blue-500"
+                    style="top: 50%; transform: translate(-50%)"
+                  >
+                    show
+                  </button>
+                  <!-- show/hide button end  -->
+                </div>
+                <!-- submit button  -->
+                <button
+                  type="submit"
+                  class="py-3 px-4 rounded-md bg-blue-600 w-full font-inter font-semibold text-white mt-12 hover:bg-blue-400 transition"
+                >
+                  Login
+                </button>
+                <!-- submit button end  -->
+              </div>
+              <!-- main container end  -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- view For Student Login Only End  -->
+    <script src="scripts/index.js"></script>
+    <script>
+
+
+
+      const dropDownBtn = document.querySelector("#menu-button");
+      const dropDownItems = document.querySelector(".drop-down-items");
+      dropDownBtn.addEventListener("click", () => {
+        dropDownItems.classList.toggle("hidden");
+      });
+      const showHide = document.querySelector("#show-hide");
+      const PaswordF = document.querySelector("#password");
+
+      dropDownBtn.addEventListener("click",()=>{
+        console.log("Hello world");
+      })
+
+      showHide.addEventListener("click", () => {
+        let type = PaswordF.type;
+        if (type == "password") {
+          PaswordF.type = "text";
+          showHide.innerHTML = "Hide";
+        } else {
+          PaswordF.type = "password";
+          showHide.innerHTML = "show";
+        }
+      });
+    </script>
+  </body>
+</html>
